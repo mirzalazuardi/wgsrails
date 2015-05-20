@@ -1,0 +1,18 @@
+<%= form_for @image, multipart: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control"  %>
+  <%= @image.errors[:title].first unless @image.errors[:title].blank? %>
+  <br/>
+  <%= f.label :url %>
+  <%= f.file_field :url  %>
+  <%= @image.errors[:url].first unless @image.errors[:url].blank? %>
+  <%= @image.errors[:url].first unless @image.errors[:url].blank? %>
+  <br/>  
+  <%= f.label :description  %>
+  <%= f.text_area :description, cols: 20, rows: 10, class: "form-control" %>
+  <%= @image.errors[:description].first unless @image.errors[:description].blank? %>
+  <br/>  
+  <%= f.submit :submit %>
+
+<% end  %>
+
