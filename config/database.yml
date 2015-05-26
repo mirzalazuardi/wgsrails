@@ -77,3 +77,10 @@ development:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 
+    
+test:
+  <<: *default
+  database: wgs_test
+  username: luckymeerza
+  password: antapani
+

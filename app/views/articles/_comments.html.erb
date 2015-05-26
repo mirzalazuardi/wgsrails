@@ -1,0 +1,9 @@
+<% @comments.each do |comment| %>
+  <p>
+  <b> 
+    <%= comment.user.try(:username)  %>
+  </b>
+  </p>
+  <br>
+  <%= comment.content %>
+<% end %>

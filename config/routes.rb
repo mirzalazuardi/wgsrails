@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :sessions
+  get "sign_up" => "users#new", :as => "sign_up"
+  resources :users
+  post 'articles/process_file', as: :pfil
+  get 'articles/upload', as: :upl
+  get 'articles/export', as: :exp
+  resources :comments
   resources :images
   resources :articles
   root :to => "articles#index"

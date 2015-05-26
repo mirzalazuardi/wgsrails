@@ -1,3 +1,12 @@
+<h2>
+  <% if !current_user %>
+    <%= link_to 'Log-in', new_session_path %>
+  <% else %>
+  Hello <%= current_user.username %>
+<%= link_to 'Logout', session_path(current_user.id), method: "DELETE" %>
+<% end %>
+</h2>
+
 <% @articles.each do |article| %>
   <h3> <%= article.title %> </h3>
   <p> <%= article.content.truncate(20)%> </p>
@@ -10,3 +19,4 @@
   </p>
   <hr>
 <% end %>
+<%= will_paginate @articles , renderer: BootstrapPagination::Rails %>
